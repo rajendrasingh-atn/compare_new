@@ -1,0 +1,15 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:    Compare
+Version:    1.1
+Last change:    26/02/20 [fixed Float bug, vf]
+Assigned to:    Quick Compare
+Primary use:    Compare 
+-------------------------------------------------------------------*/
+@import "bootstrap-select.css";
+@import "custom.css";
+@import "default.css";
+@import "custom.css";
+@import "bootstrap-select.css";
+@import "range-slider.css";

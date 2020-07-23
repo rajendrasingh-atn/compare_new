@@ -1,0 +1,20 @@
+ERROR - 2020-02-23 00:46:42 --> Query error: Table 'quick_compare.favourite_products' doesn't exist - Invalid query: SELECT `product`.`id` as `product_id`, `product_title`, `product_slug`, `product_category_id`, `product_brand_id`, `product_meta_keyword`, `product_meta_description`, `product_varient`.`id` as `product_varient_id`, `product_varient`.`sku` as `product_sku`, `product_image`, `base_price`, `sale_price`, `category_title`, `category_slug`, (SELECT favourite_products.products_id FROM favourite_products WHERE user_id = 0 AND favourite_products.products_id = product.id ) as is_fav
+FROM `product`
+JOIN `product_varient` ON `product_varient`.`product_id` = `product`.`id`
+LEFT JOIN `product_variant_market` ON `product_variant_market`.`product_variant_id` = `product_varient`.`id`
+LEFT JOIN `category` ON `category`.`id` = `product`.`product_category_id`
+WHERE `is_primary` = 1
+AND `product_category_id` = '1'
+GROUP BY `product_varient`.`product_id`
+ORDER BY `product_varient_added` DESC
+ LIMIT 4
+ERROR - 2020-02-23 00:46:50 --> Query error: Table 'quick_compare.favourite_products' doesn't exist - Invalid query: SELECT `product`.`id` as `product_id`, `product_title`, `product_slug`, `product_category_id`, `product_brand_id`, `product_meta_keyword`, `product_meta_description`, `product_varient`.`id` as `product_varient_id`, `product_varient`.`sku` as `product_sku`, `product_image`, `base_price`, `sale_price`, `category_title`, `category_slug`, (SELECT favourite_products.products_id FROM favourite_products WHERE user_id = 0 AND favourite_products.products_id = product.id ) as is_fav
+FROM `product`
+JOIN `product_varient` ON `product_varient`.`product_id` = `product`.`id`
+LEFT JOIN `product_variant_market` ON `product_variant_market`.`product_variant_id` = `product_varient`.`id`
+LEFT JOIN `category` ON `category`.`id` = `product`.`product_category_id`
+WHERE `is_primary` = 1
+AND `product_category_id` = '1'
+GROUP BY `product_varient`.`product_id`
+ORDER BY `product_varient_added` DESC
+ LIMIT 4
